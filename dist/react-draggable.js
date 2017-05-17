@@ -11,41 +11,41 @@
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-/******/
+
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-/******/
+
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-/******/
+
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			exports: {},
 /******/ 			id: moduleId,
 /******/ 			loaded: false
 /******/ 		};
-/******/
+
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
+
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-/******/
+
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/
-/******/
+
+
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-/******/
+
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-/******/
+
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-/******/
+
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
 /******/ })
@@ -55,7 +55,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	
+
 	module.exports = __webpack_require__(1).default;
 	module.exports.DraggableCore = __webpack_require__(17).default;
 
@@ -64,59 +64,59 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	
+
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	
+
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
+
 	var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-	
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
+
 	var _react = __webpack_require__(2);
-	
+
 	var _react2 = _interopRequireDefault(_react);
-	
+
 	var _propTypes = __webpack_require__(3);
-	
+
 	var _propTypes2 = _interopRequireDefault(_propTypes);
-	
+
 	var _reactDom = __webpack_require__(11);
-	
+
 	var _reactDom2 = _interopRequireDefault(_reactDom);
-	
+
 	var _classnames = __webpack_require__(12);
-	
+
 	var _classnames2 = _interopRequireDefault(_classnames);
-	
+
 	var _domFns = __webpack_require__(13);
-	
+
 	var _positionFns = __webpack_require__(16);
-	
+
 	var _shims = __webpack_require__(14);
-	
+
 	var _DraggableCore = __webpack_require__(17);
-	
+
 	var _DraggableCore2 = _interopRequireDefault(_DraggableCore);
-	
+
 	var _log = __webpack_require__(19);
-	
+
 	var _log2 = _interopRequireDefault(_log);
-	
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
+
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-	
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
+
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
+
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	// $FlowIgnore
-	
-	
+
+
 	/*:: import type {DraggableEventHandler} from './utils/types';*/
 	/*:: type DraggableState = {
 	  dragging: boolean,
@@ -125,102 +125,102 @@ return /******/ (function(modules) { // webpackBootstrap
 	  slackX: number, slackY: number,
 	  isElementSVG: boolean
 	};*/
-	
-	
+
+
 	//
 	// Define <Draggable>
 	//
-	
+
 	/*:: type ConstructorProps = {
 	  position: { x: number, y: number },
 	  defaultPosition: { x: number, y: number }
 	};*/
-	
+
 	var Draggable = function (_React$Component) {
 	  _inherits(Draggable, _React$Component);
-	
+
 	  function Draggable(props /*: ConstructorProps*/) {
 	    _classCallCheck(this, Draggable);
-	
+
 	    var _this = _possibleConstructorReturn(this, (Draggable.__proto__ || Object.getPrototypeOf(Draggable)).call(this, props));
-	
+
 	    _this.onDragStart = function (e, coreData) {
 	      (0, _log2.default)('Draggable: onDragStart: %j', coreData);
-	
+
 	      // Short-circuit if user's callback killed it.
 	      var shouldStart = _this.props.onStart(e, (0, _positionFns.createDraggableData)(_this, coreData));
 	      // Kills start event on core as well, so move handlers are never bound.
 	      if (shouldStart === false) return false;
-	
+
 	      _this.setState({ dragging: true, dragged: true });
 	    };
-	
+
 	    _this.onDrag = function (e, coreData) {
 	      if (!_this.state.dragging) return false;
 	      (0, _log2.default)('Draggable: onDrag: %j', coreData);
-	
+
 	      var uiData = (0, _positionFns.createDraggableData)(_this, coreData);
-	
+
 	      var newState /*: $Shape<DraggableState>*/ = {
 	        x: uiData.x,
 	        y: uiData.y
 	      };
-	
+
 	      // Keep within bounds.
 	      if (_this.props.bounds) {
 	        // Save original x and y.
 	        var _x = newState.x,
 	            _y = newState.y;
-	
+
 	        // Add slack to the values used to calculate bound position. This will ensure that if
 	        // we start removing slack, the element won't react to it right away until it's been
 	        // completely removed.
-	
+
 	        newState.x += _this.state.slackX;
 	        newState.y += _this.state.slackY;
-	
+
 	        // Get bound position. This will ceil/floor the x and y within the boundaries.
 	        // $FlowBug
-	
+
 	        // Recalculate slack by noting how much was shaved by the boundPosition handler.
 	        var _getBoundPosition = (0, _positionFns.getBoundPosition)(_this, newState.x, newState.y);
-	
+
 	        var _getBoundPosition2 = _slicedToArray(_getBoundPosition, 2);
-	
+
 	        newState.x = _getBoundPosition2[0];
 	        newState.y = _getBoundPosition2[1];
 	        newState.slackX = _this.state.slackX + (_x - newState.x);
 	        newState.slackY = _this.state.slackY + (_y - newState.y);
-	
+
 	        // Update the event we fire to reflect what really happened after bounds took effect.
 	        uiData.x = _x;
 	        uiData.y = _y;
 	        uiData.deltaX = newState.x - _this.state.x;
 	        uiData.deltaY = newState.y - _this.state.y;
 	      }
-	
+
 	      // Short-circuit if user's callback killed it.
 	      var shouldUpdate = _this.props.onDrag(e, uiData);
 	      if (shouldUpdate === false) return false;
-	
+
 	      _this.setState(newState);
 	    };
-	
+
 	    _this.onDragStop = function (e, coreData) {
 	      if (!_this.state.dragging) return false;
-	
+
 	      // Short-circuit if user's callback killed it.
 	      var shouldStop = _this.props.onStop(e, (0, _positionFns.createDraggableData)(_this, coreData));
 	      if (shouldStop === false) return false;
-	
+
 	      (0, _log2.default)('Draggable: onDragStop: %j', coreData);
-	
+
 	      var newState /*: $Shape<DraggableState>*/ = {
 	        dragging: false,
 	        slackX: 0,
 	        slackY: 0
 	      };
-	
+
 	      // If this is a controlled component, the result of this operation will be to
 	      // revert back to the old position. We expect a handler on `onDragStop`, at the least.
 	      var controlled = Boolean(_this.props.position);
@@ -228,34 +228,34 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var _this$props$position = _this.props.position,
 	            _x2 = _this$props$position.x,
 	            _y2 = _this$props$position.y;
-	
+
 	        newState.x = _x2;
 	        newState.y = _y2;
 	      }
-	
+
 	      _this.setState(newState);
 	    };
-	
+
 	    _this.state = {
 	      // Whether or not we are currently dragging.
 	      dragging: false,
-	
+
 	      // Whether or not we have been dragged before.
 	      dragged: false,
-	
+
 	      // Current transform x and y.
 	      x: props.position ? props.position.x : props.defaultPosition.x,
 	      y: props.position ? props.position.y : props.defaultPosition.y,
-	
+
 	      // Used for compensating for out-of-bounds drags
 	      slackX: 0, slackY: 0,
-	
+
 	      // Can only determine if SVG after mounting
 	      isElementSVG: false
 	    };
 	    return _this;
 	  }
-	
+
 	  _createClass(Draggable, [{
 	    key: 'componentWillMount',
 	    value: function componentWillMount() {
@@ -289,23 +289,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: 'render',
 	    value: function render() /*: React.Element<any>*/ {
 	      var _classNames;
-	
+
 	      var style = {},
 	          svgTransform = null;
-	
+
 	      // If this is controlled, we don't want to move it - unless it's dragging.
 	      var controlled = Boolean(this.props.position);
 	      var draggable = !controlled || this.state.dragging;
-	
+
 	      var position = this.props.position || this.props.defaultPosition;
 	      var transformOpts = {
 	        // Set left if horizontal drag is enabled
 	        x: (0, _positionFns.canDragX)(this) && draggable ? this.state.x : position.x,
-	
+
 	        // Set top if vertical drag is enabled
 	        y: (0, _positionFns.canDragY)(this) && draggable ? this.state.y : position.y
 	      };
-	
+
 	      // If this element was SVG, we use the `transform` attribute.
 	      if (this.state.isElementSVG) {
 	        svgTransform = (0, _domFns.createSVGTransform)(transformOpts);
@@ -316,16 +316,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // has a clean slate.
 	        style = (0, _domFns.createCSSTransform)(transformOpts);
 	      }
-	
+
 	      var _props = this.props,
 	          defaultClassName = _props.defaultClassName,
 	          defaultClassNameDragging = _props.defaultClassNameDragging,
 	          defaultClassNameDragged = _props.defaultClassNameDragged;
-	
+
 	      // Mark with class while dragging
-	
+
 	      var className = (0, _classnames2.default)(this.props.children.props.className || '', defaultClassName, (_classNames = {}, _defineProperty(_classNames, defaultClassNameDragging, this.state.dragging), _defineProperty(_classNames, defaultClassNameDragged, this.state.dragged), _classNames));
-	
+
 	      // Reuse the child provided
 	      // This makes it flexible to use whatever element is wanted (div, ul, etc)
 	      return _react2.default.createElement(
@@ -339,13 +339,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	      );
 	    }
 	  }]);
-	
+
 	  return Draggable;
 	}(_react2.default.Component);
-	
+
 	Draggable.displayName = 'Draggable';
 	Draggable.propTypes = _extends({}, _DraggableCore2.default.propTypes, {
-	
+
 	  /**
 	   * `axis` determines which axis the draggable can move.
 	   *
@@ -360,7 +360,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	   * Defaults to 'both'.
 	   */
 	  axis: _propTypes2.default.oneOf(['both', 'x', 'y', 'none']),
-	
+
 	  /**
 	   * `bounds` determines the range of movement available to the element.
 	   * Available values are:
@@ -393,11 +393,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    top: _propTypes2.default.number,
 	    bottom: _propTypes2.default.number
 	  }), _propTypes2.default.string, _propTypes2.default.oneOf([false])]),
-	
+
 	  defaultClassName: _propTypes2.default.string,
 	  defaultClassNameDragging: _propTypes2.default.string,
 	  defaultClassNameDragged: _propTypes2.default.string,
-	
+
 	  /**
 	   * `defaultPosition` specifies the x and y that the dragged item should start at
 	   *
@@ -419,7 +419,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    x: _propTypes2.default.number,
 	    y: _propTypes2.default.number
 	  }),
-	
+
 	  /**
 	   * `position`, if present, defines the current position of the element.
 	   *
@@ -444,7 +444,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    x: _propTypes2.default.number,
 	    y: _propTypes2.default.number
 	  }),
-	
+
+	  /**
+	   * `scaleFactor`, if present, defines the scale factor between actual size and current scale
+	   *
+	   * It is used to correct the position of the draggable element to the position of the mouse
+	   *
+	   */
+	  scaleFactor: _propTypes2.default.number,
+
 	  /**
 	   * These properties should be defined on the child, not here.
 	   */
@@ -459,7 +467,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  defaultClassNameDragging: 'react-draggable-dragging',
 	  defaultClassNameDragged: 'react-draggable-dragged',
 	  defaultPosition: { x: 0, y: 0 },
-	  position: null
+	  position: null,
+	  scaleFactor: 1
 	});
 	exports.default = Draggable;
 
@@ -481,19 +490,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 */
-	
+
 	if (({"DRAGGABLE_DEBUG":undefined}).NODE_ENV !== 'production') {
 	  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
 	    Symbol.for &&
 	    Symbol.for('react.element')) ||
 	    0xeac7;
-	
+
 	  var isValidElement = function(object) {
 	    return typeof object === 'object' &&
 	      object !== null &&
 	      object.$$typeof === REACT_ELEMENT_TYPE;
 	  };
-	
+
 	  // By explicitly using `prop-types` you are opting into new development behavior.
 	  // http://fb.me/prop-types-in-prod
 	  var throwOnDirectAccess = true;
@@ -517,21 +526,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 */
-	
+
 	'use strict';
-	
+
 	var emptyFunction = __webpack_require__(5);
 	var invariant = __webpack_require__(6);
 	var warning = __webpack_require__(7);
-	
+
 	var ReactPropTypesSecret = __webpack_require__(8);
 	var checkPropTypes = __webpack_require__(9);
-	
+
 	module.exports = function(isValidElement, throwOnDirectAccess) {
 	  /* global Symbol */
 	  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
 	  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
-	
+
 	  /**
 	   * Returns the iterator method function contained on the iterable object.
 	   *
@@ -552,7 +561,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return iteratorFn;
 	    }
 	  }
-	
+
 	  /**
 	   * Collection of methods that allow declaration and validation of props that are
 	   * supplied to React components. Example usage:
@@ -599,9 +608,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	   *
 	   * @internal
 	   */
-	
+
 	  var ANONYMOUS = '<<anonymous>>';
-	
+
 	  // Important!
 	  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
 	  var ReactPropTypes = {
@@ -612,7 +621,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    object: createPrimitiveTypeChecker('object'),
 	    string: createPrimitiveTypeChecker('string'),
 	    symbol: createPrimitiveTypeChecker('symbol'),
-	
+
 	    any: createAnyTypeChecker(),
 	    arrayOf: createArrayOfTypeChecker,
 	    element: createElementTypeChecker(),
@@ -623,7 +632,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    oneOfType: createUnionTypeChecker,
 	    shape: createShapeTypeChecker
 	  };
-	
+
 	  /**
 	   * inlined Object.is polyfill to avoid requiring consumers ship their own
 	   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
@@ -641,7 +650,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }
 	  /*eslint-enable no-self-compare*/
-	
+
 	  /**
 	   * We use an Error-like object for backward compatibility as people may call
 	   * PropTypes directly and inspect their output. However, we don't use real
@@ -655,7 +664,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	  // Make `instanceof Error` still work for returned errors.
 	  PropTypeError.prototype = Error.prototype;
-	
+
 	  function createChainableTypeChecker(validate) {
 	    if (({"DRAGGABLE_DEBUG":undefined}).NODE_ENV !== 'production') {
 	      var manualPropTypeCallCache = {};
@@ -664,7 +673,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
 	      componentName = componentName || ANONYMOUS;
 	      propFullName = propFullName || propName;
-	
+
 	      if (secret !== ReactPropTypesSecret) {
 	        if (throwOnDirectAccess) {
 	          // New behavior only for users of `prop-types` package
@@ -709,13 +718,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return validate(props, propName, componentName, location, propFullName);
 	      }
 	    }
-	
+
 	    var chainedCheckType = checkType.bind(null, false);
 	    chainedCheckType.isRequired = checkType.bind(null, true);
-	
+
 	    return chainedCheckType;
 	  }
-	
+
 	  function createPrimitiveTypeChecker(expectedType) {
 	    function validate(props, propName, componentName, location, propFullName, secret) {
 	      var propValue = props[propName];
@@ -725,18 +734,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // check, but we can offer a more precise error message here rather than
 	        // 'of type `object`'.
 	        var preciseType = getPreciseType(propValue);
-	
+
 	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
 	      }
 	      return null;
 	    }
 	    return createChainableTypeChecker(validate);
 	  }
-	
+
 	  function createAnyTypeChecker() {
 	    return createChainableTypeChecker(emptyFunction.thatReturnsNull);
 	  }
-	
+
 	  function createArrayOfTypeChecker(typeChecker) {
 	    function validate(props, propName, componentName, location, propFullName) {
 	      if (typeof typeChecker !== 'function') {
@@ -757,7 +766,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    return createChainableTypeChecker(validate);
 	  }
-	
+
 	  function createElementTypeChecker() {
 	    function validate(props, propName, componentName, location, propFullName) {
 	      var propValue = props[propName];
@@ -769,7 +778,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    return createChainableTypeChecker(validate);
 	  }
-	
+
 	  function createInstanceTypeChecker(expectedClass) {
 	    function validate(props, propName, componentName, location, propFullName) {
 	      if (!(props[propName] instanceof expectedClass)) {
@@ -781,13 +790,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    return createChainableTypeChecker(validate);
 	  }
-	
+
 	  function createEnumTypeChecker(expectedValues) {
 	    if (!Array.isArray(expectedValues)) {
 	      ({"DRAGGABLE_DEBUG":undefined}).NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOf, expected an instance of array.') : void 0;
 	      return emptyFunction.thatReturnsNull;
 	    }
-	
+
 	    function validate(props, propName, componentName, location, propFullName) {
 	      var propValue = props[propName];
 	      for (var i = 0; i < expectedValues.length; i++) {
@@ -795,13 +804,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	          return null;
 	        }
 	      }
-	
+
 	      var valuesString = JSON.stringify(expectedValues);
 	      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + propValue + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
 	    }
 	    return createChainableTypeChecker(validate);
 	  }
-	
+
 	  function createObjectOfTypeChecker(typeChecker) {
 	    function validate(props, propName, componentName, location, propFullName) {
 	      if (typeof typeChecker !== 'function') {
@@ -824,13 +833,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    return createChainableTypeChecker(validate);
 	  }
-	
+
 	  function createUnionTypeChecker(arrayOfTypeCheckers) {
 	    if (!Array.isArray(arrayOfTypeCheckers)) {
 	      ({"DRAGGABLE_DEBUG":undefined}).NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
 	      return emptyFunction.thatReturnsNull;
 	    }
-	
+
 	    function validate(props, propName, componentName, location, propFullName) {
 	      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
 	        var checker = arrayOfTypeCheckers[i];
@@ -838,12 +847,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	          return null;
 	        }
 	      }
-	
+
 	      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
 	    }
 	    return createChainableTypeChecker(validate);
 	  }
-	
+
 	  function createNodeChecker() {
 	    function validate(props, propName, componentName, location, propFullName) {
 	      if (!isNode(props[propName])) {
@@ -853,7 +862,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    return createChainableTypeChecker(validate);
 	  }
-	
+
 	  function createShapeTypeChecker(shapeTypes) {
 	    function validate(props, propName, componentName, location, propFullName) {
 	      var propValue = props[propName];
@@ -875,7 +884,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    return createChainableTypeChecker(validate);
 	  }
-	
+
 	  function isNode(propValue) {
 	    switch (typeof propValue) {
 	      case 'number':
@@ -891,7 +900,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (propValue === null || isValidElement(propValue)) {
 	          return true;
 	        }
-	
+
 	        var iteratorFn = getIteratorFn(propValue);
 	        if (iteratorFn) {
 	          var iterator = iteratorFn.call(propValue);
@@ -916,32 +925,32 @@ return /******/ (function(modules) { // webpackBootstrap
 	        } else {
 	          return false;
 	        }
-	
+
 	        return true;
 	      default:
 	        return false;
 	    }
 	  }
-	
+
 	  function isSymbol(propType, propValue) {
 	    // Native Symbol.
 	    if (propType === 'symbol') {
 	      return true;
 	    }
-	
+
 	    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
 	    if (propValue['@@toStringTag'] === 'Symbol') {
 	      return true;
 	    }
-	
+
 	    // Fallback for non-spec compliant Symbols which are polyfilled.
 	    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
 	      return true;
 	    }
-	
+
 	    return false;
 	  }
-	
+
 	  // Equivalent of `typeof` but with special handling for array and regexp.
 	  function getPropType(propValue) {
 	    var propType = typeof propValue;
@@ -959,7 +968,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    return propType;
 	  }
-	
+
 	  // This handles more types than `getPropType`. Only used for error messages.
 	  // See `createPrimitiveTypeChecker`.
 	  function getPreciseType(propValue) {
@@ -973,7 +982,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    return propType;
 	  }
-	
+
 	  // Returns class name of the object, if any.
 	  function getClassName(propValue) {
 	    if (!propValue.constructor || !propValue.constructor.name) {
@@ -981,10 +990,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    return propValue.constructor.name;
 	  }
-	
+
 	  ReactPropTypes.checkPropTypes = checkPropTypes;
 	  ReactPropTypes.PropTypes = ReactPropTypes;
-	
+
 	  return ReactPropTypes;
 	};
 
@@ -994,7 +1003,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports) {
 
 	"use strict";
-	
+
 	/**
 	 * Copyright (c) 2013-present, Facebook, Inc.
 	 * All rights reserved.
@@ -1005,20 +1014,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	 *
 	 * 
 	 */
-	
+
 	function makeEmptyFunction(arg) {
 	  return function () {
 	    return arg;
 	  };
 	}
-	
+
 	/**
 	 * This function accepts and discards inputs; it has no side effects. This is
 	 * primarily useful idiomatically for overridable function endpoints which
 	 * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
 	 */
 	var emptyFunction = function emptyFunction() {};
-	
+
 	emptyFunction.thatReturns = makeEmptyFunction;
 	emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
 	emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
@@ -1029,7 +1038,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	emptyFunction.thatReturnsArgument = function (arg) {
 	  return arg;
 	};
-	
+
 	module.exports = emptyFunction;
 
 /***/ },
@@ -1045,9 +1054,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
 	 */
-	
+
 	'use strict';
-	
+
 	/**
 	 * Use invariant() to assert state which your program assumes to be true.
 	 *
@@ -1058,9 +1067,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * The invariant message will be stripped in production, but the invariant
 	 * will remain to ensure logic does not differ in production.
 	 */
-	
+
 	var validateFormat = function validateFormat(format) {};
-	
+
 	if (({"DRAGGABLE_DEBUG":undefined}).NODE_ENV !== 'production') {
 	  validateFormat = function validateFormat(format) {
 	    if (format === undefined) {
@@ -1068,10 +1077,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  };
 	}
-	
+
 	function invariant(condition, format, a, b, c, d, e, f) {
 	  validateFormat(format);
-	
+
 	  if (!condition) {
 	    var error;
 	    if (format === undefined) {
@@ -1084,12 +1093,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }));
 	      error.name = 'Invariant Violation';
 	    }
-	
+
 	    error.framesToPop = 1; // we don't care about invariant's own frame
 	    throw error;
 	  }
 	}
-	
+
 	module.exports = invariant;
 
 /***/ },
@@ -1105,27 +1114,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
 	 */
-	
+
 	'use strict';
-	
+
 	var emptyFunction = __webpack_require__(5);
-	
+
 	/**
 	 * Similar to invariant but only logs a warning if the condition is not met.
 	 * This can be used to log issues in development environments in critical
 	 * paths. Removing the logging code for production environments will keep the
 	 * same logic and follow the same code paths.
 	 */
-	
+
 	var warning = emptyFunction;
-	
+
 	if (({"DRAGGABLE_DEBUG":undefined}).NODE_ENV !== 'production') {
 	  (function () {
 	    var printWarning = function printWarning(format) {
 	      for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
 	        args[_key - 1] = arguments[_key];
 	      }
-	
+
 	      var argIndex = 0;
 	      var message = 'Warning: ' + format.replace(/%s/g, function () {
 	        return args[argIndex++];
@@ -1140,27 +1149,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	        throw new Error(message);
 	      } catch (x) {}
 	    };
-	
+
 	    warning = function warning(condition, format) {
 	      if (format === undefined) {
 	        throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
 	      }
-	
+
 	      if (format.indexOf('Failed Composite propType: ') === 0) {
 	        return; // Ignore CompositeComponent proptype check.
 	      }
-	
+
 	      if (!condition) {
 	        for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
 	          args[_key2 - 2] = arguments[_key2];
 	        }
-	
+
 	        printWarning.apply(undefined, [format].concat(args));
 	      }
 	    };
 	  })();
 	}
-	
+
 	module.exports = warning;
 
 /***/ },
@@ -1175,11 +1184,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 */
-	
+
 	'use strict';
-	
+
 	var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
-	
+
 	module.exports = ReactPropTypesSecret;
 
 
@@ -1195,16 +1204,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 */
-	
+
 	'use strict';
-	
+
 	if (({"DRAGGABLE_DEBUG":undefined}).NODE_ENV !== 'production') {
 	  var invariant = __webpack_require__(6);
 	  var warning = __webpack_require__(7);
 	  var ReactPropTypesSecret = __webpack_require__(8);
 	  var loggedTypeFailures = {};
 	}
-	
+
 	/**
 	 * Assert that the values match with the type specs.
 	 * Error messages are memorized and will only be shown once.
@@ -1237,16 +1246,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	          // Only monitor this failure once because there tends to be a lot of the
 	          // same error.
 	          loggedTypeFailures[error.message] = true;
-	
+
 	          var stack = getStack ? getStack() : '';
-	
+
 	          warning(false, 'Failed %s type: %s%s', location, error.message, stack != null ? stack : '');
 	        }
 	      }
 	    }
 	  }
 	}
-	
+
 	module.exports = checkPropTypes;
 
 
@@ -1262,12 +1271,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 */
-	
+
 	'use strict';
-	
+
 	var emptyFunction = __webpack_require__(5);
 	var invariant = __webpack_require__(6);
-	
+
 	module.exports = function() {
 	  // Important!
 	  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
@@ -1291,7 +1300,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    object: shim,
 	    string: shim,
 	    symbol: shim,
-	
+
 	    any: shim,
 	    arrayOf: getShim,
 	    element: shim,
@@ -1302,10 +1311,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    oneOfType: getShim,
 	    shape: getShim
 	  };
-	
+
 	  ReactPropTypes.checkPropTypes = emptyFunction;
 	  ReactPropTypes.PropTypes = ReactPropTypes;
-	
+
 	  return ReactPropTypes;
 	};
 
@@ -1326,21 +1335,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	  http://jedwatson.github.io/classnames
 	*/
 	/* global define */
-	
+
 	(function () {
 		'use strict';
-	
+
 		var hasOwn = {}.hasOwnProperty;
-	
+
 		function classNames () {
 			var classes = [];
-	
+
 			for (var i = 0; i < arguments.length; i++) {
 				var arg = arguments[i];
 				if (!arg) continue;
-	
+
 				var argType = typeof arg;
-	
+
 				if (argType === 'string' || argType === 'number') {
 					classes.push(arg);
 				} else if (Array.isArray(arg)) {
@@ -1353,10 +1362,10 @@ return /******/ (function(modules) { // webpackBootstrap
 					}
 				}
 			}
-	
+
 			return classes.join(' ');
 		}
-	
+
 		if (typeof module !== 'undefined' && module.exports) {
 			module.exports = classNames;
 		} else if (true) {
@@ -1375,13 +1384,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	
+
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	
+
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
+
 	exports.matchesSelector = matchesSelector;
 	exports.matchesSelectorAndParentsTo = matchesSelectorAndParentsTo;
 	exports.addEvent = addEvent;
@@ -1398,20 +1407,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.addUserSelectStyles = addUserSelectStyles;
 	exports.removeUserSelectStyles = removeUserSelectStyles;
 	exports.styleHacks = styleHacks;
-	
+
 	var _shims = __webpack_require__(14);
-	
+
 	var _getPrefix = __webpack_require__(15);
-	
+
 	var _getPrefix2 = _interopRequireDefault(_getPrefix);
-	
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
+
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-	
+
 	/*:: import type {ControlPosition} from './types';*/
-	
-	
+
+
 	var matchesSelectorFunc = '';
 	function matchesSelector(el /*: Node*/, selector /*: string*/) /*: boolean*/ {
 	  if (!matchesSelectorFunc) {
@@ -1420,11 +1429,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return (0, _shims.isFunction)(el[method]);
 	    });
 	  }
-	
+
 	  // $FlowIgnore: Doesn't think elements are indexable
 	  return el[matchesSelectorFunc].call(el, selector);
 	}
-	
+
 	// Works up the tree to the draggable itself attempting to match selector.
 	function matchesSelectorAndParentsTo(el /*: Node*/, selector /*: string*/, baseNode /*: Node*/) /*: boolean*/ {
 	  var node = el;
@@ -1433,10 +1442,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (node === baseNode) return false;
 	    node = node.parentNode;
 	  } while (node);
-	
+
 	  return false;
 	}
-	
+
 	function addEvent(el /*: ?Node*/, event /*: string*/, handler /*: Function*/) /*: void*/ {
 	  if (!el) {
 	    return;
@@ -1450,7 +1459,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    el['on' + event] = handler;
 	  }
 	}
-	
+
 	function removeEvent(el /*: ?Node*/, event /*: string*/, handler /*: Function*/) /*: void*/ {
 	  if (!el) {
 	    return;
@@ -1464,7 +1473,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    el['on' + event] = null;
 	  }
 	}
-	
+
 	function outerHeight(node /*: HTMLElement*/) /*: number*/ {
 	  // This is deliberately excluding margin for our calculations, since we are using
 	  // offsetTop which is including margin. See getBoundPosition
@@ -1474,7 +1483,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  height += (0, _shims.int)(computedStyle.borderBottomWidth);
 	  return height;
 	}
-	
+
 	function outerWidth(node /*: HTMLElement*/) /*: number*/ {
 	  // This is deliberately excluding margin for our calculations, since we are using
 	  // offsetLeft which is including margin. See getBoundPosition
@@ -1491,7 +1500,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  height -= (0, _shims.int)(computedStyle.paddingBottom);
 	  return height;
 	}
-	
+
 	function innerWidth(node /*: HTMLElement*/) /*: number*/ {
 	  var width = node.clientWidth;
 	  var computedStyle = node.ownerDocument.defaultView.getComputedStyle(node);
@@ -1499,33 +1508,33 @@ return /******/ (function(modules) { // webpackBootstrap
 	  width -= (0, _shims.int)(computedStyle.paddingRight);
 	  return width;
 	}
-	
+
 	// Get from offsetParent
 	function offsetXYFromParent(evt /*: {clientX: number, clientY: number}*/, offsetParent /*: HTMLElement*/) /*: ControlPosition*/ {
 	  var isBody = offsetParent === offsetParent.ownerDocument.body;
 	  var offsetParentRect = isBody ? { left: 0, top: 0 } : offsetParent.getBoundingClientRect();
-	
+
 	  var x = evt.clientX + offsetParent.scrollLeft - offsetParentRect.left;
 	  var y = evt.clientY + offsetParent.scrollTop - offsetParentRect.top;
-	
+
 	  return { x: x, y: y };
 	}
-	
+
 	function createCSSTransform(_ref) /*: Object*/ {
 	  var x = _ref.x,
 	      y = _ref.y;
-	
+
 	  // Replace unitless items with px
 	  return _defineProperty({}, (0, _getPrefix.browserPrefixToKey)('transform', _getPrefix2.default), 'translate(' + x + 'px,' + y + 'px)');
 	}
-	
+
 	function createSVGTransform(_ref3) /*: string*/ {
 	  var x = _ref3.x,
 	      y = _ref3.y;
-	
+
 	  return 'translate(' + x + ',' + y + ')';
 	}
-	
+
 	function getTouch(e /*: MouseTouchEvent*/, identifier /*: number*/) /*: ?{clientX: number, clientY: number}*/ {
 	  return e.targetTouches && (0, _shims.findInArray)(e.targetTouches, function (t) {
 	    return identifier === t.identifier;
@@ -1533,12 +1542,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return identifier === t.identifier;
 	  });
 	}
-	
+
 	function getTouchIdentifier(e /*: MouseTouchEvent*/) /*: ?number*/ {
 	  if (e.targetTouches && e.targetTouches[0]) return e.targetTouches[0].identifier;
 	  if (e.changedTouches && e.changedTouches[0]) return e.changedTouches[0].identifier;
 	}
-	
+
 	// User-select Hacks:
 	//
 	// Useful for preventing blue highlights all over everything when dragging.
@@ -1546,22 +1555,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	var userSelect = (0, _getPrefix.browserPrefixToStyle)('user-select', userSelectPrefix);
 	var userSelectStyle = ';' + userSelect + ': none;';
 	var userSelectReplaceRegExp = new RegExp(';?' + userSelect + ': none;'); // leading ; not present on IE
-	
+
 	// Note we're passing `document` b/c we could be iframed
 	function addUserSelectStyles(body /*: HTMLElement*/) {
 	  var style = body.getAttribute('style') || '';
 	  if (userSelectReplaceRegExp.test(style)) return; // don't add twice
 	  body.setAttribute('style', style + userSelectStyle);
 	}
-	
+
 	function removeUserSelectStyles(body /*: HTMLElement*/) {
 	  var style = body.getAttribute('style') || '';
 	  body.setAttribute('style', style.replace(userSelectReplaceRegExp, ''));
 	}
-	
+
 	function styleHacks() /*: Object*/ {
 	  var childStyle /*: Object*/ = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-	
+
 	  // Workaround IE pointer events; see #51
 	  // https://github.com/mzabriskie/react-draggable/issues/51#issuecomment-103488278
 	  return _extends({
@@ -1574,7 +1583,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports) {
 
 	'use strict';
-	
+
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
@@ -1583,26 +1592,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.isNum = isNum;
 	exports.int = int;
 	exports.dontSetMe = dontSetMe;
-	
+
 	// @credits https://gist.github.com/rogozhnikoff/a43cfed27c41e4e68cdc
 	function findInArray(array /*: Array<any> | TouchList*/, callback /*: Function*/) /*: any*/ {
 	  for (var i = 0, length = array.length; i < length; i++) {
 	    if (callback.apply(callback, [array[i], i, array])) return array[i];
 	  }
 	}
-	
+
 	function isFunction(func /*: any*/) /*: boolean*/ {
 	  return typeof func === 'function' || Object.prototype.toString.call(func) === '[object Function]';
 	}
-	
+
 	function isNum(num /*: any*/) /*: boolean*/ {
 	  return typeof num === 'number' && !isNaN(num);
 	}
-	
+
 	function int(a /*: string*/) /*: number*/ {
 	  return parseInt(a, 10);
 	}
-	
+
 	function dontSetMe(props /*: Object*/, propName /*: string*/, componentName /*: string*/) {
 	  if (props[propName]) {
 	    return new Error('Invalid prop ' + propName + ' passed to ' + componentName + ' - do not set this, set it on the child.');
@@ -1614,7 +1623,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports) {
 
 	'use strict';
-	
+
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
@@ -1624,31 +1633,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	var prefixes = ['Moz', 'Webkit', 'O', 'ms'];
 	function getPrefix() /*: string*/ {
 	  var prop /*: string*/ = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'transform';
-	
+
 	  // Checking specifically for 'window.document' is for pseudo-browser server-side
 	  // environments that define 'window' as the global context.
 	  // E.g. React-rails (see https://github.com/reactjs/react-rails/pull/84)
 	  if (typeof window === 'undefined' || typeof window.document === 'undefined') return '';
-	
+
 	  var style = window.document.documentElement.style;
-	
+
 	  if (prop in style) return '';
-	
+
 	  for (var i = 0; i < prefixes.length; i++) {
 	    if (browserPrefixToKey(prop, prefixes[i]) in style) return prefixes[i];
 	  }
-	
+
 	  return '';
 	}
-	
+
 	function browserPrefixToKey(prop /*: string*/, prefix /*: string*/) /*: string*/ {
 	  return prefix ? '' + prefix + kebabToTitleCase(prop) : prop;
 	}
-	
+
 	function browserPrefixToStyle(prop /*: string*/, prefix /*: string*/) /*: string*/ {
 	  return prefix ? '-' + prefix.toLowerCase() + '-' + prop : prop;
 	}
-	
+
 	function kebabToTitleCase(str /*: string*/) /*: string*/ {
 	  var out = '';
 	  var shouldCapitalize = true;
@@ -1664,7 +1673,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	  return out;
 	}
-	
+
 	// Default export is the prefix itself, like 'Moz', 'Webkit', etc
 	// Note that you may have to re-test for certain things; for instance, Chrome 50
 	// can handle unprefixed `transform`, but not unprefixed `user-select`
@@ -1675,7 +1684,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	
+
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
@@ -1686,33 +1695,33 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.getControlPosition = getControlPosition;
 	exports.createCoreData = createCoreData;
 	exports.createDraggableData = createDraggableData;
-	
+
 	var _shims = __webpack_require__(14);
-	
+
 	var _reactDom = __webpack_require__(11);
-	
+
 	var _reactDom2 = _interopRequireDefault(_reactDom);
-	
+
 	var _domFns = __webpack_require__(13);
-	
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
+
 	/*:: import type Draggable from '../Draggable';*/
 	/*:: import type {Bounds, ControlPosition, DraggableData} from './types';*/
 	/*:: import type DraggableCore from '../DraggableCore';*/
 	function getBoundPosition(draggable /*: Draggable*/, x /*: number*/, y /*: number*/) /*: [number, number]*/ {
 	  // If no bounds, short-circuit and move on
 	  if (!draggable.props.bounds) return [x, y];
-	
+
 	  // Clone new bounds
 	  var bounds = draggable.props.bounds;
-	
+
 	  bounds = typeof bounds === 'string' ? bounds : cloneBounds(bounds);
 	  var node = _reactDom2.default.findDOMNode(draggable);
-	
+
 	  if (typeof bounds === 'string') {
 	    var ownerDocument = node.ownerDocument;
-	
+
 	    var ownerWindow = ownerDocument.defaultView;
 	    var boundNode = void 0;
 	    if (bounds === 'parent') {
@@ -1731,32 +1740,32 @@ return /******/ (function(modules) { // webpackBootstrap
 	      bottom: (0, _domFns.innerHeight)(boundNode) - (0, _domFns.outerHeight)(node) - node.offsetTop + (0, _shims.int)(boundNodeStyle.paddingBottom) - (0, _shims.int)(nodeStyle.marginBottom)
 	    };
 	  }
-	
+
 	  // Keep x and y below right and bottom limits...
 	  if ((0, _shims.isNum)(bounds.right)) x = Math.min(x, bounds.right);
 	  if ((0, _shims.isNum)(bounds.bottom)) y = Math.min(y, bounds.bottom);
-	
+
 	  // But above left and top limits.
 	  if ((0, _shims.isNum)(bounds.left)) x = Math.max(x, bounds.left);
 	  if ((0, _shims.isNum)(bounds.top)) y = Math.max(y, bounds.top);
-	
+
 	  return [x, y];
 	}
-	
+
 	function snapToGrid(grid /*: [number, number]*/, pendingX /*: number*/, pendingY /*: number*/) /*: [number, number]*/ {
 	  var x = Math.round(pendingX / grid[0]) * grid[0];
 	  var y = Math.round(pendingY / grid[1]) * grid[1];
 	  return [x, y];
 	}
-	
+
 	function canDragX(draggable /*: Draggable*/) /*: boolean*/ {
 	  return draggable.props.axis === 'both' || draggable.props.axis === 'x';
 	}
-	
+
 	function canDragY(draggable /*: Draggable*/) /*: boolean*/ {
 	  return draggable.props.axis === 'both' || draggable.props.axis === 'y';
 	}
-	
+
 	// Get {x, y} positions from event.
 	function getControlPosition(e /*: MouseTouchEvent*/, touchIdentifier /*: ?number*/, draggableCore /*: DraggableCore*/) /*: ?ControlPosition*/ {
 	  var touchObj = typeof touchIdentifier === 'number' ? (0, _domFns.getTouch)(e, touchIdentifier) : null;
@@ -1766,12 +1775,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var offsetParent = draggableCore.props.offsetParent || node.offsetParent || node.ownerDocument.body;
 	  return (0, _domFns.offsetXYFromParent)(touchObj || e, offsetParent);
 	}
-	
+
 	// Create an data object exposed by <DraggableCore>'s events
 	function createCoreData(draggable /*: DraggableCore*/, x /*: number*/, y /*: number*/) /*: DraggableData*/ {
 	  var state = draggable.state;
 	  var isStart = !(0, _shims.isNum)(state.lastX);
-	
+
 	  if (isStart) {
 	    // If this is our first move, use the x and y as last coords.
 	    return {
@@ -1790,20 +1799,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	  }
 	}
-	
+
 	// Create an data exposed by <Draggable>'s events
 	function createDraggableData(draggable /*: Draggable*/, coreData /*: DraggableData*/) /*: DraggableData*/ {
 	  return {
 	    node: coreData.node,
-	    x: draggable.state.x + coreData.deltaX,
-	    y: draggable.state.y + coreData.deltaY,
-	    deltaX: coreData.deltaX,
-	    deltaY: coreData.deltaY,
+	    x: draggable.state.x + coreData.deltaX / this.props.scaleFactor,
+	    y: draggable.state.y + coreData.deltaY / this.props.scaleFactor,
+	    deltaX: coreData.deltaX / this.props.scaleFactor,
+	    deltaY: coreData.deltaY / this.props.scaleFactor,
 	    lastX: draggable.state.x,
 	    lastY: draggable.state.y
 	  };
 	}
-	
+
 	// A lot faster than stringify/parse
 	function cloneBounds(bounds /*: Bounds*/) /*: Bounds*/ {
 	  return {
@@ -1819,45 +1828,45 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
-	
+
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	
+
 	var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-	
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
+
 	var _react = __webpack_require__(2);
-	
+
 	var _react2 = _interopRequireDefault(_react);
-	
+
 	var _propTypes = __webpack_require__(3);
-	
+
 	var _propTypes2 = _interopRequireDefault(_propTypes);
-	
+
 	var _reactDom = __webpack_require__(11);
-	
+
 	var _reactDom2 = _interopRequireDefault(_reactDom);
-	
+
 	var _domFns = __webpack_require__(13);
-	
+
 	var _positionFns = __webpack_require__(16);
-	
+
 	var _shims = __webpack_require__(14);
-	
+
 	var _log = __webpack_require__(19);
-	
+
 	var _log2 = _interopRequireDefault(_log);
-	
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
+
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
+
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
+
 	// Simple abstraction for dragging events names.
 	/*:: import type {EventHandler} from './utils/types';*/
 	var eventsFor = {
@@ -1872,38 +1881,38 @@ return /******/ (function(modules) { // webpackBootstrap
 	    stop: 'mouseup'
 	  }
 	};
-	
+
 	// Default to mouse events.
 	var dragEventFor = eventsFor.mouse;
-	
+
 	//
 	// Define <DraggableCore>.
 	//
 	// <DraggableCore> is for advanced usage of <Draggable>. It maintains minimal internal state so it can
 	// work well with libraries that require more control over the element.
 	//
-	
+
 	/*:: type CoreState = {
 	  dragging: boolean,
 	  lastX: number,
 	  lastY: number,
 	  touchIdentifier: ?number
 	};*/
-	
+
 	var DraggableCore = function (_React$Component) {
 	  _inherits(DraggableCore, _React$Component);
-	
+
 	  function DraggableCore() {
 	    var _ref;
-	
+
 	    var _temp, _this, _ret;
-	
+
 	    _classCallCheck(this, DraggableCore);
-	
+
 	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
 	      args[_key] = arguments[_key];
 	    }
-	
+
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = DraggableCore.__proto__ || Object.getPrototypeOf(DraggableCore)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
 	      dragging: false,
 	      // Used while dragging to determine deltas.
@@ -1912,94 +1921,94 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }, _this.handleDragStart = function (e) {
 	      // Make it possible to attach event handlers on top of this one.
 	      _this.props.onMouseDown(e);
-	
+
 	      // Only accept left-clicks.
 	      if (!_this.props.allowAnyClick && typeof e.button === 'number' && e.button !== 0) return false;
-	
+
 	      // Get nodes. Be sure to grab relative document (could be iframed)
 	      var domNode = _reactDom2.default.findDOMNode(_this);
 	      var ownerDocument = domNode.ownerDocument;
-	
+
 	      // Short circuit if handle or cancel prop was provided and selector doesn't match.
-	
+
 	      if (_this.props.disabled || !(e.target instanceof ownerDocument.defaultView.Node) || _this.props.handle && !(0, _domFns.matchesSelectorAndParentsTo)(e.target, _this.props.handle, domNode) || _this.props.cancel && (0, _domFns.matchesSelectorAndParentsTo)(e.target, _this.props.cancel, domNode)) {
 	        return;
 	      }
-	
+
 	      // Set touch identifier in component state if this is a touch event. This allows us to
 	      // distinguish between individual touches on multitouch screens by identifying which
 	      // touchpoint was set to this element.
 	      var touchIdentifier = (0, _domFns.getTouchIdentifier)(e);
 	      _this.setState({ touchIdentifier: touchIdentifier });
-	
+
 	      // Get the current drag point from the event. This is used as the offset.
 	      var position = (0, _positionFns.getControlPosition)(e, touchIdentifier, _this);
 	      if (position == null) return; // not possible but satisfies flow
 	      var x = position.x,
 	          y = position.y;
-	
+
 	      // Create an event object with all the data parents need to make a decision here.
-	
+
 	      var coreEvent = (0, _positionFns.createCoreData)(_this, x, y);
-	
+
 	      (0, _log2.default)('DraggableCore: handleDragStart: %j', coreEvent);
-	
+
 	      // Call event handler. If it returns explicit false, cancel.
 	      (0, _log2.default)('calling', _this.props.onStart);
 	      var shouldUpdate = _this.props.onStart(e, coreEvent);
 	      if (shouldUpdate === false) return;
-	
+
 	      // Add a style to the body to disable user-select. This prevents text from
 	      // being selected all over the page.
 	      if (_this.props.enableUserSelectHack) (0, _domFns.addUserSelectStyles)(ownerDocument.body);
-	
+
 	      // Initiate dragging. Set the current x and y as offsets
 	      // so we know how much we've moved during the drag. This allows us
 	      // to drag elements around even if they have been moved, without issue.
 	      _this.setState({
 	        dragging: true,
-	
+
 	        lastX: x,
 	        lastY: y
 	      });
-	
+
 	      // Add events to the document directly so we catch when the user's mouse/touch moves outside of
 	      // this element. We use different events depending on whether or not we have detected that this
 	      // is a touch-capable device.
 	      (0, _domFns.addEvent)(ownerDocument, dragEventFor.move, _this.handleDrag);
 	      (0, _domFns.addEvent)(ownerDocument, dragEventFor.stop, _this.handleDragStop);
 	    }, _this.handleDrag = function (e) {
-	
+
 	      // Prevent scrolling on mobile devices, like ipad/iphone.
 	      if (e.type === 'touchmove') e.preventDefault();
-	
+
 	      // Get the current drag point from the event. This is used as the offset.
 	      var position = (0, _positionFns.getControlPosition)(e, _this.state.touchIdentifier, _this);
 	      if (position == null) return;
 	      var x = position.x,
 	          y = position.y;
-	
+
 	      // Snap to grid if prop has been provided
-	
+
 	      if (Array.isArray(_this.props.grid)) {
 	        var deltaX = x - _this.state.lastX,
 	            deltaY = y - _this.state.lastY;
-	
+
 	        var _snapToGrid = (0, _positionFns.snapToGrid)(_this.props.grid, deltaX, deltaY);
-	
+
 	        var _snapToGrid2 = _slicedToArray(_snapToGrid, 2);
-	
+
 	        deltaX = _snapToGrid2[0];
 	        deltaY = _snapToGrid2[1];
-	
+
 	        if (!deltaX && !deltaY) return; // skip useless drag
 	        x = _this.state.lastX + deltaX, y = _this.state.lastY + deltaY;
 	      }
-	
+
 	      var coreEvent = (0, _positionFns.createCoreData)(_this, x, y);
-	
+
 	      (0, _log2.default)('DraggableCore: handleDrag: %j', coreEvent);
-	
+
 	      // Call event handler. If it returns explicit false, trigger end.
 	      var shouldUpdate = _this.props.onDrag(e, coreEvent);
 	      if (shouldUpdate === false) {
@@ -2016,66 +2025,66 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return;
 	      }
-	
+
 	      _this.setState({
 	        lastX: x,
 	        lastY: y
 	      });
 	    }, _this.handleDragStop = function (e) {
 	      if (!_this.state.dragging) return;
-	
+
 	      var position = (0, _positionFns.getControlPosition)(e, _this.state.touchIdentifier, _this);
 	      if (position == null) return;
 	      var x = position.x,
 	          y = position.y;
-	
+
 	      var coreEvent = (0, _positionFns.createCoreData)(_this, x, y);
-	
+
 	      var _ReactDOM$findDOMNode = _reactDom2.default.findDOMNode(_this),
 	          ownerDocument = _ReactDOM$findDOMNode.ownerDocument;
-	
+
 	      // Remove user-select hack
-	
-	
+
+
 	      if (_this.props.enableUserSelectHack) (0, _domFns.removeUserSelectStyles)(ownerDocument.body);
-	
+
 	      (0, _log2.default)('DraggableCore: handleDragStop: %j', coreEvent);
-	
+
 	      // Reset the el.
 	      _this.setState({
 	        dragging: false,
 	        lastX: NaN,
 	        lastY: NaN
 	      });
-	
+
 	      // Call event handler
 	      _this.props.onStop(e, coreEvent);
-	
+
 	      // Remove event handlers
 	      (0, _log2.default)('DraggableCore: Removing handlers');
 	      (0, _domFns.removeEvent)(ownerDocument, dragEventFor.move, _this.handleDrag);
 	      (0, _domFns.removeEvent)(ownerDocument, dragEventFor.stop, _this.handleDragStop);
 	    }, _this.onMouseDown = function (e) {
 	      dragEventFor = eventsFor.mouse; // on touchscreen laptops we could switch back to mouse
-	
+
 	      return _this.handleDragStart(e);
 	    }, _this.onMouseUp = function (e) {
 	      dragEventFor = eventsFor.mouse;
-	
+
 	      return _this.handleDragStop(e);
 	    }, _this.onTouchStart = function (e) {
 	      // We're on a touch device now, so change the event handlers
 	      dragEventFor = eventsFor.touch;
-	
+
 	      return _this.handleDragStart(e);
 	    }, _this.onTouchEnd = function (e) {
 	      // We're on a touch device now, so change the event handlers
 	      dragEventFor = eventsFor.touch;
-	
+
 	      return _this.handleDragStop(e);
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
-	
+
 	  _createClass(DraggableCore, [{
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {
@@ -2083,16 +2092,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	      // some browser quirk caused a touch event to fire during a mouse move, or vice versa.
 	      var _ReactDOM$findDOMNode2 = _reactDom2.default.findDOMNode(this),
 	          ownerDocument = _ReactDOM$findDOMNode2.ownerDocument;
-	
+
 	      (0, _domFns.removeEvent)(ownerDocument, eventsFor.mouse.move, this.handleDrag);
 	      (0, _domFns.removeEvent)(ownerDocument, eventsFor.touch.move, this.handleDrag);
 	      (0, _domFns.removeEvent)(ownerDocument, eventsFor.mouse.stop, this.handleDragStop);
 	      (0, _domFns.removeEvent)(ownerDocument, eventsFor.touch.stop, this.handleDragStop);
 	      if (this.props.enableUserSelectHack) (0, _domFns.removeUserSelectStyles)(ownerDocument.body);
 	    }
-	
+
 	    // Same as onMouseDown (start drag), but now consider this a touch device.
-	
+
 	  }, {
 	    key: 'render',
 	    value: function render() /*: React.Element<any>*/ {
@@ -2100,7 +2109,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      // This makes it flexible to use whatever element is wanted (div, ul, etc)
 	      return _react2.default.cloneElement(_react2.default.Children.only(this.props.children), {
 	        style: (0, _domFns.styleHacks)(this.props.children.props.style),
-	
+
 	        // Note: mouseMove handler is attached to document so it will still function
 	        // when the user drags quickly and leaves the bounds of the element.
 	        onMouseDown: this.onMouseDown,
@@ -2110,10 +2119,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	      });
 	    }
 	  }]);
-	
+
 	  return DraggableCore;
 	}(_react2.default.Component);
-	
+
 	DraggableCore.displayName = 'DraggableCore';
 	DraggableCore.propTypes = {
 	  /**
@@ -2123,20 +2132,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	   * Defaults to `false`.
 	   */
 	  allowAnyClick: _propTypes2.default.bool,
-	
+
 	  /**
 	   * `disabled`, if true, stops the <Draggable> from dragging. All handlers,
 	   * with the exception of `onMouseDown`, will not fire.
 	   */
 	  disabled: _propTypes2.default.bool,
-	
+
 	  /**
 	   * By default, we add 'user-select:none' attributes to the document body
 	   * to prevent ugly text selection during drag. If this is causing problems
 	   * for your app, set this to `false`.
 	   */
 	  enableUserSelectHack: _propTypes2.default.bool,
-	
+
 	  /**
 	   * `offsetParent`, if set, uses the passed DOM node to compute drag offsets
 	   * instead of using the parent node.
@@ -2146,12 +2155,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	      throw new Error('Draggable\'s offsetParent must be a DOM Node.');
 	    }
 	  },
-	
+
 	  /**
 	   * `grid` specifies the x and y that dragging should snap to.
 	   */
 	  grid: _propTypes2.default.arrayOf(_propTypes2.default.number),
-	
+
 	  /**
 	   * `handle` specifies a selector to be used as the handle that initiates drag.
 	   *
@@ -2173,7 +2182,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	   * ```
 	   */
 	  handle: _propTypes2.default.string,
-	
+
 	  /**
 	   * `cancel` specifies a selector to be used to prevent drag initialization.
 	   *
@@ -2195,31 +2204,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	   * ```
 	   */
 	  cancel: _propTypes2.default.string,
-	
+
 	  /**
 	   * Called when dragging starts.
 	   * If this function returns the boolean false, dragging will be canceled.
 	   */
 	  onStart: _propTypes2.default.func,
-	
+
 	  /**
 	   * Called while dragging.
 	   * If this function returns the boolean false, dragging will be canceled.
 	   */
 	  onDrag: _propTypes2.default.func,
-	
+
 	  /**
 	   * Called when dragging stops.
 	   * If this function returns the boolean false, the drag will remain active.
 	   */
 	  onStop: _propTypes2.default.func,
-	
+
 	  /**
 	   * A workaround option which can be passed if onMouseDown needs to be accessed,
 	   * since it'll always be blocked (as there is internal use of onMouseDown)
 	   */
 	  onMouseDown: _propTypes2.default.func,
-	
+
 	  /**
 	   * These properties should be defined on the child, not here.
 	   */
@@ -2250,15 +2259,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// shim for using process in browser
 	var process = module.exports = {};
-	
+
 	// cached from whatever global is present so that test runners that stub it
 	// don't break things.  But we need to wrap it in a try catch in case it is
 	// wrapped in strict mode code which doesn't define any globals.  It's inside a
 	// function because try/catches deoptimize in certain engines.
-	
+
 	var cachedSetTimeout;
 	var cachedClearTimeout;
-	
+
 	function defaultSetTimout() {
 	    throw new Error('setTimeout has not been defined');
 	}
@@ -2307,8 +2316,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	            return cachedSetTimeout.call(this, fun, 0);
 	        }
 	    }
-	
-	
+
+
 	}
 	function runClearTimeout(marker) {
 	    if (cachedClearTimeout === clearTimeout) {
@@ -2333,15 +2342,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	            return cachedClearTimeout.call(this, marker);
 	        }
 	    }
-	
-	
-	
+
+
+
 	}
 	var queue = [];
 	var draining = false;
 	var currentQueue;
 	var queueIndex = -1;
-	
+
 	function cleanUpNextTick() {
 	    if (!draining || !currentQueue) {
 	        return;
@@ -2356,14 +2365,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        drainQueue();
 	    }
 	}
-	
+
 	function drainQueue() {
 	    if (draining) {
 	        return;
 	    }
 	    var timeout = runTimeout(cleanUpNextTick);
 	    draining = true;
-	
+
 	    var len = queue.length;
 	    while(len) {
 	        currentQueue = queue;
@@ -2380,7 +2389,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    draining = false;
 	    runClearTimeout(timeout);
 	}
-	
+
 	process.nextTick = function (fun) {
 	    var args = new Array(arguments.length - 1);
 	    if (arguments.length > 1) {
@@ -2393,7 +2402,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        runTimeout(drainQueue);
 	    }
 	};
-	
+
 	// v8 likes predictible objects
 	function Item(fun, array) {
 	    this.fun = fun;
@@ -2408,9 +2417,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	process.argv = [];
 	process.version = ''; // empty string to avoid regexp issues
 	process.versions = {};
-	
+
 	function noop() {}
-	
+
 	process.on = noop;
 	process.addListener = noop;
 	process.once = noop;
@@ -2418,11 +2427,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	process.removeListener = noop;
 	process.removeAllListeners = noop;
 	process.emit = noop;
-	
+
 	process.binding = function (name) {
 	    throw new Error('process.binding is not supported');
 	};
-	
+
 	process.cwd = function () { return '/' };
 	process.chdir = function (dir) {
 	    throw new Error('process.chdir is not supported');
@@ -2435,16 +2444,16 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	
+
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	exports.default = log;
-	
+
 	/*eslint no-console:0*/
 	function log() {
 	  var _console;
-	
+
 	  if ((undefined)) (_console = console).log.apply(_console, arguments);
 	}
 
@@ -2452,4 +2461,3 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ])
 });
 ;
-//# sourceMappingURL=react-draggable.js.map

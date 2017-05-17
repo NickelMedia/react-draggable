@@ -139,6 +139,14 @@ export default class Draggable extends React.Component {
       y: PropTypes.number
     }),
 
+      /**
+       * `scaleFactor`, if present, defines the scale factor between actual size and current scale
+       *
+       * It is used to correct the position of the draggable element to the position of the mouse
+       *
+       */
+    scaleFactor: PropTypes.number,
+
     /**
      * These properties should be defined on the child, not here.
      */
@@ -146,6 +154,8 @@ export default class Draggable extends React.Component {
     style: dontSetMe,
     transform: dontSetMe
   };
+
+
 
   static defaultProps = {
     ...DraggableCore.defaultProps,
@@ -155,7 +165,8 @@ export default class Draggable extends React.Component {
     defaultClassNameDragging: 'react-draggable-dragging',
     defaultClassNameDragged: 'react-draggable-dragged',
     defaultPosition: {x: 0, y: 0},
-    position: null
+    position: null,
+    scaleFactor: 1,
   };
 
   state: DraggableState;

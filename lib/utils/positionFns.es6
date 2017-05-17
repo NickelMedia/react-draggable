@@ -102,10 +102,10 @@ export function createCoreData(draggable: DraggableCore, x: number, y: number): 
 export function createDraggableData(draggable: Draggable, coreData: DraggableData): DraggableData {
   return {
     node: coreData.node,
-    x: draggable.state.x + coreData.deltaX,
-    y: draggable.state.y + coreData.deltaY,
-    deltaX: coreData.deltaX,
-    deltaY: coreData.deltaY,
+    x: draggable.state.x + (coreData.deltaX / this.props.scaleFactor),
+    y: draggable.state.y + (coreData.deltaY / this.props.scaleFactor),
+    deltaX: (coreData.deltaX / this.props.scaleFactor),
+    deltaY: (coreData.deltaY / this.props.scaleFactor),
     lastX: draggable.state.x,
     lastY: draggable.state.y
   };
